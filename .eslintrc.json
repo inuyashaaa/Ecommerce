@@ -1,0 +1,136 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true,
+      "modules": true
+    },
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "import",
+    "react",
+    "react-hooks"
+  ],
+  "globals": {
+    "fetch": true,
+    "expect": true,
+    "setupTest": true
+  },
+  "env": {
+    "es6": true,
+    "mocha": true
+  },
+  "rules": {
+    "global-require": 0,
+    "comma-dangle": [
+      2,
+      "always-multiline"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "new-cap": [
+      2,
+      {
+        "newIsCap": true,
+        "capIsNew": false
+      }
+    ],
+    "max-len": [
+      1,
+      160,
+      2
+    ],
+    "arrow-body-style": 0,
+    "class-methods-use-this": 0,
+    "imports-first": 0,
+    "no-trailing-spaces": 0,
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "warn",
+      {
+        "aspects": [
+          "invalidHref"
+        ]
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/jsx-space-before-closing": 0,
+    "react/jsx-boolean-value": [
+      1,
+      "never"
+    ],
+    "react/prop-types": 0,
+    "react/forbid-prop-types": [
+      1,
+      {
+        "forbid": [
+          "any"
+        ]
+      }
+    ],
+    "react/sort-comp": [
+      2,
+      {
+        "order": [
+          "static-methods",
+          "pre-render-lifecycle",
+          "everything-else",
+          "render",
+          "did-render-lifecycle"
+        ],
+        "groups": {
+          "pre-render-lifecycle": [
+            "displayName",
+            "propTypes",
+            "contextTypes",
+            "childContextTypes",
+            "mixins",
+            "statics",
+            "defaultProps",
+            "constructor",
+            "getDefaultProps",
+            "getInitialState",
+            "state",
+            "getChildContext",
+            "componentWillMount",
+            "componentWillReceiveProps",
+            "shouldComponentUpdate",
+            "componentWillUpdate"
+          ],
+          "did-render-lifecycle": [
+            "componentWillUnmount",
+            "componentDidMount",
+            "componentDidUpdate"
+          ]
+        }
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "no-console": "off",
+    "import/prefer-default-export": "off",
+    "camelcase": "off",
+    "no-use-before-define": "off",
+    "import/no-cycle": "off",
+    "react/jsx-wrap-multilines": 0,
+    "no-underscore-dangle": "off",
+    "no-nested-ternary": "off",
+    "no-param-reassign": "off",
+    "react/jsx-closing-tag-location": "off",
+    "no-mixed-operators": "off",
+    "no-plusplus": "off"
+  }
+}
