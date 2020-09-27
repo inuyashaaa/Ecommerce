@@ -6,3 +6,9 @@ export const registerUser = (data) => {
     payload: { data },
   }
 }
+export const loginUser = (data) => {
+  return {
+    type: userTypes.LOGIN_USER,
+    payload: { data },
+  }
+}
