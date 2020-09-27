@@ -9,4 +9,5 @@ if (__DEV__) {
 } else {
   console.tron = { log: () => true }
 }
+
 AppRegistry.registerComponent(appName, () => App)

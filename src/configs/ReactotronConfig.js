@@ -6,7 +6,7 @@ Reactotron.clear()
 const reactotron = Reactotron
   .setAsyncStorageHandler(AsyncStorage)
   .configure({
-    name: 'Weather React Native',
+    name: 'Ecommerce React Native',
     host: 'localhost',
     port: 6969,
   })
