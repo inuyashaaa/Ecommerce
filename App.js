@@ -1,18 +1,31 @@
-import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { Provider } from 'react-redux'
+import {
+  SplashScreen, LoginScreen, RegisterScreen, HomeScreen,
+} from './src/screens'
+import { SCREEN_NAME } from './src/configs'
+import store from './src/redux/store'
 
-export default class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-    }
-  }
+const Stack = createStackNavigator()
 
-  render() {
-    return (
-      <View>
-        <Text> App </Text>
-      </View>
-    )
-  }
+const App = () => {
+  return (
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{
+          headerShown: false,
+        }}
+        >
+          <Stack.Screen name={SCREEN_NAME.SplashScreen} component={SplashScreen} />
+          <Stack.Screen name={SCREEN_NAME.LoginScreen} component={LoginScreen} />
+          <Stack.Screen name={SCREEN_NAME.RegisterScreen} component={RegisterScreen} />
+          <Stack.Screen name={SCREEN_NAME.HomeScreen} component={HomeScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
+  )
 }
+
+export default App
