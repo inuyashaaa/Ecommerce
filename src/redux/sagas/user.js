@@ -4,18 +4,21 @@ import { userTypes } from '../types'
 import { API_URL } from '../../configs'
 
 function* loginUser(action) {
+  const { callback, data } = action?.payload
+  const { email, password } = data
   try {
     const response = yield call(() => axios.post(`${API_URL}/user/login`, {
-      email: action?.payload?.data?.email,
-      password: action?.payload?.data?.password,
+      email,
+      password,
     }))
 
     yield put({
       type: userTypes.LOGIN_USER_SUCCESS,
-      payload: { data: response.data },
+      payload: { data: response?.data?.data },
     })
+    callback(response?.data)
   } catch (error) {
-    console.tron.log({ error: error.message })
+    callback(error?.response?.data)
   }
 }
 

@@ -122,3 +122,15 @@ export const TextStyles = {
     color: Colors.primaryBlue,
   },
 }
+export const MessageStyle = {
+  success: {
+    style: { backgroundColor: Colors.primaryBlue },
+    titleStyle: TextStyles.bodyMediumTextBold,
+    duration: 3000,
+  },
+  error: {
+    style: { backgroundColor: Colors.primaryRed },
+    titleStyle: TextStyles.bodyMediumTextBold,
+    duration: 3000,
+  },
+}
