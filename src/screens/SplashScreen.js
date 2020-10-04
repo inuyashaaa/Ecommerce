@@ -7,19 +7,21 @@ import { SCREEN_NAME } from '../configs'
 const SplashScreen = (props) => {
   const { navigation } = props
   const user = useSelector((state) => state.user)
+  const persist = useSelector((state) => state._persist)
   useEffect(() => {
-    SplashScreenLib.hide()
-    if (!user?.token) {
-      navigation.navigate(SCREEN_NAME.LoginScreen)
-      return
+    if (persist.rehydrated) {
+      if (!user?.token) {
+        SplashScreenLib.hide()
+        navigation.navigate(SCREEN_NAME.LoginScreen)
+        return
+      }
+      SplashScreenLib.hide()
+      navigation.navigate(SCREEN_NAME.MAIN_TAB, { screen: SCREEN_NAME.HomeScreen })
     }
-    navigation.navigate(SCREEN_NAME.HomeScreen)
-  }, [])
+  }, [persist.rehydrated])
 
   return (
-    <View>
-      <Text>SplashScreen</Text>
-    </View>
+    <View />
   )
 }
 
