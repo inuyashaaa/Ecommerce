@@ -24,7 +24,7 @@ const LoginScreen = (props) => {
     }, (response) => {
       if (response.success) {
         Helpers.showMess('Login success!!!', 'success')
-        NavigationHelpers.navigateToScreen(SCREEN_NAME.HomeScreen)
+        NavigationHelpers.navigateToScreenInTab(SCREEN_NAME.HomeScreen)
       } else {
         Helpers.showMess(response.message)
       }

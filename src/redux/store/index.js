@@ -27,5 +27,5 @@ const store = createStore(persistedReducer, composeEnhancers(
   applyMiddleware(sagaMiddleware)
 ))
 sagaMiddleware.run(rootSaga)
-persistStore(store)
+persistStore(store).purge()
 export default store
