@@ -1,14 +1,14 @@
+/* eslint-disable no-undef */
 import React, { useState } from 'react'
 import {
   View, Image, SafeAreaView, TextInput, StyleSheet, TouchableOpacity, Alert,
 } from 'react-native'
-import axios from 'axios'
 import { useDispatch } from 'react-redux'
 
 import { Text } from '../../components'
 import { email, logo, password } from '../../../assets/images'
-import { Colors, MessageStyle, TextStyles } from '../../../assets/styles'
-import { API_URL, SCREEN_NAME } from '../../configs'
+import { Colors, TextStyles } from '../../../assets/styles'
+import { SCREEN_NAME } from '../../configs'
 import { userActions } from '../../redux/actions'
 import { Helpers, NavigationHelpers } from '../../utils'
 

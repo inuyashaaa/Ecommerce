@@ -6,19 +6,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Provider } from 'react-redux'
 import FlashMessage from 'react-native-flash-message'
 import {
-  TouchableOpacity, View, Image, SafeAreaView, StyleSheet,
-} from 'react-native'
-import {
   SplashScreen, LoginScreen,
   RegisterScreen, HomeScreen,
   ExploreScreen, CartScreen,
   OfferScreen, AccountScreen,
 } from './src/screens'
-import { SCREEN_NAME, TAB_DATA } from './src/configs'
+import { SCREEN_NAME } from './src/configs'
 import store from './src/redux/store'
-import { Colors, TextStyles } from './assets/styles'
 import { navigationRef } from './src/utils/NavigationHelpers'
-import { Text, MainTabbar } from './src/components'
+import { MainTabbar } from './src/components'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
