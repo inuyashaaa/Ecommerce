@@ -5,6 +5,7 @@ import {
 } from 'react-native'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types'
+import FastImage from 'react-native-fast-image'
 import { Colors, TextStyles } from '../../assets/styles'
 import Text from './Text'
 
@@ -24,7 +25,7 @@ const ProductCardComponent = (props) => {
       marginRight: 16,
     }}
     >
-      <Image
+      <FastImage
         source={imageSource}
         style={{
           width: 109,

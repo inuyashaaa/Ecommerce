@@ -5,6 +5,7 @@ import {
 } from 'react-native'
 import { useDispatch } from 'react-redux'
 
+import * as Animatable from 'react-native-animatable'
 import { Text } from '../../components'
 import { email, logo, password } from '../../../assets/images'
 import { Colors, TextStyles } from '../../../assets/styles'
@@ -35,7 +36,9 @@ const LoginScreen = (props) => {
     <View style={{ flex: 1, backgroundColor: Colors.backgroundWhite, paddingHorizontal: 16 }}>
       <SafeAreaView />
       <View style={{ alignItems: 'center' }}>
-        <Image
+
+        <Animatable.Image
+          animation="bounceInDown"
           source={logo}
           style={{ width: 72, height: 72, marginTop: 68 }}
           resizeMode="contain"
@@ -58,16 +61,21 @@ const LoginScreen = (props) => {
           Sign in to continue
         </Text>
       </View>
+
       <View>
-        <View style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          paddingHorizontal: 16,
-          paddingVertical: 12,
-          borderRadius: 5,
-          borderWidth: 2 * StyleSheet.hairlineWidth,
-          borderColor: Colors.neutralLight,
-        }}
+        <Animatable.View
+          animation="slideInLeft"
+          delay={350}
+          duration={400}
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: 16,
+            paddingVertical: 12,
+            borderRadius: 5,
+            borderWidth: 2 * StyleSheet.hairlineWidth,
+            borderColor: Colors.neutralLight,
+          }}
         >
           <Image
             source={email}
@@ -81,17 +89,22 @@ const LoginScreen = (props) => {
             placeholder="Your Email"
             placeholderTextColor={Colors.neutralGrey}
           />
-        </View>
-        <View style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          paddingHorizontal: 16,
-          paddingVertical: 12,
-          borderRadius: 5,
-          borderWidth: 2 * StyleSheet.hairlineWidth,
-          borderColor: Colors.neutralLight,
-          marginTop: 8,
-        }}
+        </Animatable.View>
+
+        <Animatable.View
+          animation="slideInRight"
+          duration={400}
+          delay={350}
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: 16,
+            paddingVertical: 12,
+            borderRadius: 5,
+            borderWidth: 2 * StyleSheet.hairlineWidth,
+            borderColor: Colors.neutralLight,
+            marginTop: 8,
+          }}
         >
           <Image
             source={password}
@@ -105,23 +118,30 @@ const LoginScreen = (props) => {
             placeholder="Your Password"
             placeholderTextColor={Colors.neutralGrey}
           />
-        </View>
+        </Animatable.View>
 
-        <TouchableOpacity
-          onPress={handlePressSignIn}
+        <Animatable.View
+          animation="bounceInUp"
+          delay={350}
+          duration={400}
         >
-          <View style={{
-            padding: 16,
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderRadius: 5,
-            backgroundColor: Colors.primaryBlue,
-            marginTop: 16,
-          }}
+          <TouchableOpacity
+            onPress={handlePressSignIn}
           >
-            <Text style={{ ...TextStyles.bodyMediumTextBold, color: Colors.backgroundWhite }}>Sign In</Text>
-          </View>
-        </TouchableOpacity>
+            <View style={{
+              padding: 16,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderRadius: 5,
+              backgroundColor: Colors.primaryBlue,
+              marginTop: 16,
+            }}
+            >
+              <Text style={{ ...TextStyles.bodyMediumTextBold, color: Colors.backgroundWhite }}>Sign In</Text>
+            </View>
+          </TouchableOpacity>
+        </Animatable.View>
+
       </View>
 
       <View
