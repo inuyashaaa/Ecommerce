@@ -18,7 +18,6 @@ import { MainTabbar } from './src/components'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
-
 const MainTab = () => {
   return (
     <Tab.Navigator
