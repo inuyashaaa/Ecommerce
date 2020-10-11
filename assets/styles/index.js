@@ -122,6 +122,19 @@ export const TextStyles = {
     color: Colors.primaryBlue,
   },
 }
+
+export const Shadows = {
+  buttonShadow: {
+    shadowColor: Colors.primaryRed,
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.24,
+    shadowRadius: 30,
+    elevation: 8,
+  },
+}
 export const MessageStyle = {
   success: {
     style: { backgroundColor: Colors.primaryBlue },
