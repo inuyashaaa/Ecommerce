@@ -1,6 +1,7 @@
 import {
   account, cart, explore, home, offer,
 } from '../../assets/images'
+import { Colors } from '../../assets/styles'
 
 export const SCREEN_NAME = {
   MAIN_TAB: 'MAIN_TAB',
@@ -12,7 +13,21 @@ export const SCREEN_NAME = {
   CartScreen: 'CartScreen',
   OfferScreen: 'OfferScreen',
   AccountScreen: 'AccountScreen',
+  ProductDetailScreen: 'ProductDetailScreen',
 }
+export const sizeData = [
+  '6', '6.5', '7', '7.5', '8', '8.5',
+]
+
+export const colorData = [
+  Colors.primaryYellow,
+  Colors.primaryBlue,
+  Colors.primaryRed,
+  Colors.primaryGreen,
+  Colors.primaryPulple,
+  Colors.neutralDark,
+]
+
 export const TAB_DATA = [
   {
     title: 'Home',

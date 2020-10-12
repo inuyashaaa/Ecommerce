@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import SplashScreenLib from 'react-native-splash-screen'
 import { useSelector, useDispatch } from 'react-redux'
 import { SCREEN_NAME } from '../configs'
-import { productActions } from '../redux/actions'
+import { productActions, categoryActions } from '../redux/actions'
 import { NavigationHelpers } from '../utils'
 
 const SplashScreen = (props) => {
@@ -21,6 +21,11 @@ const SplashScreen = (props) => {
         }, 0)
         return
       }
+
+      dispatch(categoryActions.getCategories({
+        token: user?.token,
+      }, (response) => {
+      }))
 
       dispatch(productActions.getProducts({
         token: user?.token,

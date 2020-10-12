@@ -11,6 +11,9 @@ import CartScreen from './main/CartScreen'
 import OfferScreen from './main/OfferScreen'
 import AccountScreen from './main/AccountScreen'
 
+// PRODUCT
+import ProductDetailScreen from './product/ProductDetailScreen'
+
 export {
   SplashScreen,
   LoginScreen,
@@ -20,4 +23,5 @@ export {
   CartScreen,
   OfferScreen,
   AccountScreen,
+  ProductDetailScreen,
 }

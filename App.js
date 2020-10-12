@@ -10,6 +10,7 @@ import {
   RegisterScreen, HomeScreen,
   ExploreScreen, CartScreen,
   OfferScreen, AccountScreen,
+  ProductDetailScreen,
 } from './src/screens'
 import { SCREEN_NAME } from './src/configs'
 import store from './src/redux/store'
@@ -63,6 +64,7 @@ const App = () => {
           <Stack.Screen name={SCREEN_NAME.SplashScreen} component={SplashScreen} />
           <Stack.Screen name={SCREEN_NAME.LoginScreen} component={LoginScreen} />
           <Stack.Screen name={SCREEN_NAME.RegisterScreen} component={RegisterScreen} />
+          <Stack.Screen name={SCREEN_NAME.ProductDetailScreen} component={ProductDetailScreen} />
           <Stack.Screen name={SCREEN_NAME.MAIN_TAB} component={MainTab} />
         </Stack.Navigator>
       </NavigationContainer>
