@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { StackActions } from '@react-navigation/routers'
 import { SCREEN_NAME } from '../configs'
 
 export const navigationRef = React.createRef()
@@ -8,7 +9,7 @@ export function navigateToScreen(name, params) {
 }
 
 export function navigateToScreenAndReplace(name, params) {
-  navigationRef.current?.replace(name, params)
+  navigationRef.current?.dispatch(StackActions.replace(name, params))
 }
 
 export function navigateToScreenInTab(name, params) {

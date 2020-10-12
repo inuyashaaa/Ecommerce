@@ -4,6 +4,7 @@ import {
   SafeAreaView, TouchableOpacity, Animated,
 } from 'react-native'
 import FastImage from 'react-native-fast-image'
+import { useDispatch } from 'react-redux'
 import { Colors, Shadows, TextStyles } from '../../../assets/styles'
 import { Text } from '../../components'
 import {
@@ -15,6 +16,7 @@ import { SCREEN_NAME } from '../../configs'
 const { width } = Dimensions.get('window')
 
 const AccountScreen = () => {
+  const dispatch = useDispatch()
   const [isShowModalLogout, setIsShowModalLogout] = useState(false)
   const aniShowModal = useRef(new Animated.Value(0)).current
 
@@ -198,8 +200,9 @@ const AccountScreen = () => {
 
             <TouchableOpacity
               onPress={() => {
+                dispatch({ type: 'USER_LOGOUT' })
                 handleHideModalLogout()
-                NavigationHelpers.navigateToScreen(SCREEN_NAME.LoginScreen)
+                NavigationHelpers.navigateToScreenAndReplace(SCREEN_NAME.LoginScreen)
               }}
             >
               <View style={{

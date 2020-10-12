@@ -4,6 +4,7 @@ import SplashScreenLib from 'react-native-splash-screen'
 import { useSelector, useDispatch } from 'react-redux'
 import { SCREEN_NAME } from '../configs'
 import { productActions } from '../redux/actions'
+import { NavigationHelpers } from '../utils'
 
 const SplashScreen = (props) => {
   const dispatch = useDispatch()
@@ -14,7 +15,10 @@ const SplashScreen = (props) => {
     if (persist.rehydrated) {
       if (!user?.token) {
         SplashScreenLib.hide()
-        navigation.navigate(SCREEN_NAME.LoginScreen)
+        const timout = setTimeout(() => {
+          clearTimeout(timout)
+          NavigationHelpers.navigateToScreenAndReplace(SCREEN_NAME.LoginScreen)
+        }, 0)
         return
       }
 
@@ -23,7 +27,7 @@ const SplashScreen = (props) => {
       }, (response) => {
         if (!response.success) {
           SplashScreenLib.hide()
-          navigation.navigate(SCREEN_NAME.LoginScreen)
+          NavigationHelpers.navigateToScreenAndReplace(SCREEN_NAME.LoginScreen)
           return
         }
         SplashScreenLib.hide()
