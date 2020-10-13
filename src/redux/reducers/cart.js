@@ -8,7 +8,7 @@ const cartReducer = (state = initState, action) => {
   switch (action.type) {
     case cartTypes.ADD_PRODUCT_TO_CART:
       const newSate = _.unionBy(state, [action?.payload?.data], 'id')
-      return [...newSate]
+      return newSate
     default:
       return state
   }

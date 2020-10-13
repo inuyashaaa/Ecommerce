@@ -19,3 +19,7 @@ export const showMess = (message, type = 'error') => {
     ...MessageStyle.error,
   })
 }
+
+export const secondsToStringTime = (seconds) => {
+  return new Date(seconds * 1000).toISOString().substr(11, 8).split(':')
+}

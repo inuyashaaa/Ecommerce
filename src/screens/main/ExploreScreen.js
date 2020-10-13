@@ -1,17 +1,24 @@
 /* eslint-disable no-shadow */
 import React from 'react'
 import {
-  View, StyleSheet, SafeAreaView, FlatList, TouchableOpacity,
+  View, StyleSheet, SafeAreaView, FlatList, TouchableOpacity, Dimensions,
 } from 'react-native'
 import FastImage from 'react-native-fast-image'
 import { useSelector } from 'react-redux'
 import { createSelector } from 'reselect'
+import _ from 'lodash'
 import { Colors, TextStyles } from '../../../assets/styles'
 import { Text, MainTitle } from '../../components'
 
+const numColumns = 4
+const { width } = Dimensions.get('window')
+const calSize = width / numColumns
 const ExploreScreen = () => {
   const categories = useSelector(createSelector((state) => state.categories, (categories) => categories))
-
+  const manCategories = _.filter(categories, { gender: 'male' })
+  const womenCategories = _.filter(categories, { gender: 'female' })
+  console.tron.log({ manCategories })
+  console.tron.log({ womenCategories })
   return (
     <View style={styles.container}>
       <SafeAreaView />
@@ -22,15 +29,15 @@ const ExploreScreen = () => {
         <FlatList
           style={{ marginBottom: 24, marginTop: 12 }}
           showsHorizontalScrollIndicator={false}
-          data={categories}
+          data={manCategories}
           extraData={categories}
           keyExtractor={(item) => `list-category-${item.id}`}
-          numColumns={4}
-          columnWrapperStyle={{ justifyContent: 'space-between', paddingHorizontal: 16, marginBottom: 16 }}
+          numColumns={numColumns}
+          columnWrapperStyle={{ marginBottom: 16 }}
           renderItem={({ item, index }) => {
             return (
               <TouchableOpacity>
-                <View style={{ alignItems: 'center' }}>
+                <View style={{ alignItems: 'center', width: calSize }}>
                   <View style={{
                     width: 70,
                     height: 70,
@@ -42,12 +49,21 @@ const ExploreScreen = () => {
                   }}
                   >
                     <FastImage
-                      source={{ uri: `https://huymanh.dev/ecommerce-cms/uploads/${item.category_image_file}` }}
+                      source={{ uri: item.category_image_file }}
                       style={{ width: 24, height: 24 }}
                       resizeMode="contain"
                     />
                   </View>
-                  <Text style={{ ...TextStyles.captionNormalTextRegular, color: Colors.neutralGrey, marginTop: 8 }}>{item.name}</Text>
+                  <Text style={{
+                    ...TextStyles.captionNormalTextRegular,
+                    color: Colors.neutralGrey,
+                    marginTop: 8,
+                    width: 70,
+                    textAlign: 'center',
+                  }}
+                  >
+                    {item.name}
+                  </Text>
                 </View>
               </TouchableOpacity>
             )
@@ -61,15 +77,15 @@ const ExploreScreen = () => {
         <FlatList
           style={{ marginBottom: 24, marginTop: 12 }}
           showsHorizontalScrollIndicator={false}
-          data={categories}
+          data={womenCategories}
           extraData={categories}
           keyExtractor={(item) => `list-category-${item.id}`}
-          numColumns={4}
-          columnWrapperStyle={{ justifyContent: 'space-between', paddingHorizontal: 16, marginBottom: 16 }}
+          numColumns={numColumns}
+          columnWrapperStyle={{ marginBottom: 16 }}
           renderItem={({ item, index }) => {
             return (
               <TouchableOpacity>
-                <View style={{ alignItems: 'center' }}>
+                <View style={{ alignItems: 'center', width: calSize }}>
                   <View style={{
                     width: 70,
                     height: 70,
@@ -81,12 +97,21 @@ const ExploreScreen = () => {
                   }}
                   >
                     <FastImage
-                      source={{ uri: `https://huymanh.dev/ecommerce-cms/uploads/${item.category_image_file}` }}
+                      source={{ uri: item.category_image_file }}
                       style={{ width: 24, height: 24 }}
                       resizeMode="contain"
                     />
                   </View>
-                  <Text style={{ ...TextStyles.captionNormalTextRegular, color: Colors.neutralGrey, marginTop: 8 }}>{item.name}</Text>
+                  <Text style={{
+                    ...TextStyles.captionNormalTextRegular,
+                    color: Colors.neutralGrey,
+                    marginTop: 8,
+                    textAlign: 'center',
+                    width: 70,
+                  }}
+                  >
+                    {item.name}
+                  </Text>
                 </View>
               </TouchableOpacity>
             )

@@ -56,5 +56,6 @@ const styles = StyleSheet.create({
   textButton: {
     ...TextStyles.linkNormal,
     color: Colors.primaryBlue,
+    marginRight: 16 / 375 * width,
   },
 })

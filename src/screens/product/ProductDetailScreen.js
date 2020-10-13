@@ -89,7 +89,7 @@ const ProductDetailScreen = (props) => {
       >
 
         <Image
-          source={{ uri: `https://huymanh.dev/ecommerce-cms/uploads/${currentProduct.product_image_file}` }}
+          source={{ uri: currentProduct.product_image_file }}
           style={{
             width,
             height: 238,
