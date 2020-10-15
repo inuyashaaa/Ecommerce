@@ -4,6 +4,7 @@ import ProductCardComponent from './ProductCardComponent'
 import MainTitle from './MainTitle'
 import SelectColorComponent from './SelectColorComponent'
 import SelectSizeComponent from './SelectSizeComponent'
+import MainButton from './MainButton'
 
 export {
   Text,
@@ -12,4 +13,5 @@ export {
   MainTitle,
   SelectColorComponent,
   SelectSizeComponent,
+  MainButton,
 }

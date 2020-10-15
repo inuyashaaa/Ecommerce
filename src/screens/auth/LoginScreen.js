@@ -10,7 +10,7 @@ import { Text } from '../../components'
 import { email, logo, password } from '../../../assets/images'
 import { Colors, TextStyles } from '../../../assets/styles'
 import { SCREEN_NAME } from '../../configs'
-import { userActions } from '../../redux/actions'
+import { userActions, categoryActions, productActions } from '../../redux/actions'
 import { Helpers, NavigationHelpers } from '../../utils'
 
 const LoginScreen = (props) => {
@@ -24,8 +24,21 @@ const LoginScreen = (props) => {
       password: passwordUser,
     }, (response) => {
       if (response.success) {
-        Helpers.showMess('Login success!!!', 'success')
-        NavigationHelpers.navigateToScreenInTab(SCREEN_NAME.HomeScreen)
+        dispatch(categoryActions.getCategories({
+          token: user?.token,
+        }, (responsess) => {
+        }))
+
+        dispatch(productActions.getProducts({
+          token: user?.token,
+        }, (responsea) => {
+          if (!responsea?.success) {
+            NavigationHelpers.navigateToScreenAndReplace(SCREEN_NAME.LoginScreen)
+            return
+          }
+          Helpers.showMess('Login success!!!', 'success')
+          NavigationHelpers.navigateToScreenInTab(SCREEN_NAME.HomeScreen)
+        }))
       } else {
         Helpers.showMess(response.message)
       }

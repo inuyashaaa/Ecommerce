@@ -10,7 +10,7 @@ import {
   Colors, Fonts, TextStyles, mainPaddingH,
 } from '../../../assets/styles'
 import {
-  Text, SelectSizeComponent, SelectColorComponent, ProductCardComponent,
+  Text, SelectSizeComponent, SelectColorComponent, ProductCardComponent, MainButton,
 } from '../../components'
 
 import { sizeData, colorData } from '../../configs'
@@ -317,7 +317,6 @@ const ProductDetailScreen = (props) => {
             <View style={{ flexDirection: 'row' }}>
               <ProductCardComponent
                 onPress={() => { }}
-                imageSource={product4}
                 title="FS - Nike Air Max 270 React..."
                 currentPrice="$299,43"
                 defaultPrice="$534,33"
@@ -326,7 +325,6 @@ const ProductDetailScreen = (props) => {
 
               <ProductCardComponent
                 onPress={() => { }}
-                imageSource={product5}
                 title="FS - QUILTED MAXI CROS..."
                 currentPrice="$299,43"
                 defaultPrice="$534,33"
@@ -335,7 +333,6 @@ const ProductDetailScreen = (props) => {
 
               <ProductCardComponent
                 onPress={() => { }}
-                imageSource={product1}
                 title="FS - Nike Air Max 270 React..."
                 currentPrice="$299,43"
                 defaultPrice="$534,33"
@@ -351,21 +348,10 @@ const ProductDetailScreen = (props) => {
         position: 'absolute', bottom: 0, width, alignItems: 'center',
       }}
       >
-        <TouchableOpacity
+        <MainButton
           onPress={handleAddProductToCart}
-        >
-          <View style={{
-            width: 343 / 375 * width,
-            height: 57 / 375 * width,
-            borderRadius: 5 / 375 * width,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: Colors.primaryBlue,
-          }}
-          >
-            <Text style={{ ...TextStyles.heading5, color: Colors.backgroundWhite }}>Add To Cart</Text>
-          </View>
-        </TouchableOpacity>
+          title="Add To Cart"
+        />
         <SafeAreaView />
       </View>
     </View>

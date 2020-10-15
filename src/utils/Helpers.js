@@ -23,3 +23,11 @@ export const showMess = (message, type = 'error') => {
 export const secondsToStringTime = (seconds) => {
   return new Date(seconds * 1000).toISOString().substr(11, 8).split(':')
 }
+
+export const formatCurrency = (currency) => {
+  if (!currency) {
+    return '0'
+  }
+  const formatedCurrency = currency.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  return `$${formatedCurrency}`
+}

@@ -30,7 +30,7 @@ const SplashScreen = (props) => {
       dispatch(productActions.getProducts({
         token: user?.token,
       }, (response) => {
-        if (!response.success) {
+        if (!response?.success) {
           SplashScreenLib.hide()
           NavigationHelpers.navigateToScreenAndReplace(SCREEN_NAME.LoginScreen)
           return

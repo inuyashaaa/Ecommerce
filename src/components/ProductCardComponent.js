@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
 import FastImage from 'react-native-fast-image'
 import { Colors, TextStyles } from '../../assets/styles'
 import Text from './Text'
+import { product4 } from '../../assets/images'
 
 const ProductCardComponent = (props) => {
   const {
@@ -29,7 +30,7 @@ const ProductCardComponent = (props) => {
       }}
       >
         <FastImage
-          source={imageSource}
+          source={imageSource ? { uri: imageSource } : product4}
           style={{
             width: 109,
             height: 109,

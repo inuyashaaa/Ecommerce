@@ -53,7 +53,7 @@ export const TextStyles = {
   },
   heading6: {
     ...Fonts.bold,
-    fontSize: 10,
+    fontSize: 12,
     lineHeight: 1.5,
   },
 
@@ -126,6 +126,16 @@ export const TextStyles = {
 export const Shadows = {
   buttonShadow: {
     shadowColor: Colors.primaryRed,
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.24,
+    shadowRadius: 30,
+    elevation: 8,
+  },
+  mainButtonShadow: {
+    shadowColor: Colors.primaryBlue,
     shadowOffset: {
       width: 0,
       height: 10,

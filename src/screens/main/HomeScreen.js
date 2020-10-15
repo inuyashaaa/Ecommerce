@@ -37,7 +37,6 @@ const HomeScreen = () => {
   const handleViewProductDetail = (product) => {
     NavigationHelpers.navigateToScreen(SCREEN_NAME.ProductDetailScreen, { product })
   }
-  console.tron.log({ rerender: true })
   return (
     <ScrollView style={styles.container}>
       <View style={styles.container}>
@@ -165,7 +164,7 @@ const HomeScreen = () => {
               return (
                 <ProductCardComponent
                   onPress={() => handleViewProductDetail(item)}
-                  imageSource={product4}
+                  imageSource={item.product_image_file}
                   title={item.name}
                   currentPrice={item?.price}
                   defaultPrice={item?.price}
@@ -192,7 +191,7 @@ const HomeScreen = () => {
               return (
                 <ProductCardComponent
                   onPress={() => handleViewProductDetail(item)}
-                  imageSource={product4}
+                  imageSource={item.product_image_file}
                   title={item.name}
                   currentPrice={item?.price}
                   defaultPrice={item?.price}
