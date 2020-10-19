@@ -1,3 +1,5 @@
+import HOC from './HOC'
+
 import SplashScreen from './SplashScreen'
 
 // AUTH
@@ -14,14 +16,14 @@ import AccountScreen from './main/AccountScreen'
 // PRODUCT
 import ProductDetailScreen from './product/ProductDetailScreen'
 
-export {
-  SplashScreen,
-  LoginScreen,
-  RegisterScreen,
-  HomeScreen,
-  ExploreScreen,
-  CartScreen,
-  OfferScreen,
-  AccountScreen,
-  ProductDetailScreen,
+export default {
+  SplashScreen: HOC(SplashScreen),
+  LoginScreen: HOC(LoginScreen),
+  RegisterScreen: HOC(RegisterScreen),
+  HomeScreen: HOC(HomeScreen),
+  ExploreScreen: HOC(ExploreScreen),
+  CartScreen: HOC(CartScreen),
+  OfferScreen: HOC(OfferScreen),
+  AccountScreen: HOC(AccountScreen),
+  ProductDetailScreen: HOC(ProductDetailScreen),
 }

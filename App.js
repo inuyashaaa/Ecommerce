@@ -5,17 +5,19 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Provider } from 'react-redux'
 import FlashMessage from 'react-native-flash-message'
-import {
+import screens from './src/screens'
+import { SCREEN_NAME } from './src/configs'
+import store from './src/redux/store'
+import { navigationRef } from './src/utils/NavigationHelpers'
+import { MainTabbar } from './src/components'
+
+const {
   SplashScreen, LoginScreen,
   RegisterScreen, HomeScreen,
   ExploreScreen, CartScreen,
   OfferScreen, AccountScreen,
   ProductDetailScreen,
-} from './src/screens'
-import { SCREEN_NAME } from './src/configs'
-import store from './src/redux/store'
-import { navigationRef } from './src/utils/NavigationHelpers'
-import { MainTabbar } from './src/components'
+} = screens
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()

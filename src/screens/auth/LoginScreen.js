@@ -23,7 +23,7 @@ const LoginScreen = (props) => {
       email: emailUser,
       password: passwordUser,
     }, (response) => {
-      if (response.success) {
+      if (response?.success) {
         dispatch(categoryActions.getCategories({
           token: user?.token,
         }, (responsess) => {

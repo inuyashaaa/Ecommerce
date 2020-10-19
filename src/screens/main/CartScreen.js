@@ -7,7 +7,7 @@ import Dash from 'react-native-dash'
 import { useSelector } from 'react-redux'
 import { createSelector } from 'reselect'
 import {
-  product4, love, trash,
+  love, trash,
 } from '../../../assets/images'
 import { Colors, Shadows, TextStyles } from '../../../assets/styles'
 import { MainButton, Text } from '../../components'
@@ -218,6 +218,5 @@ export default CartScreen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.backgroundWhite,
   },
 })

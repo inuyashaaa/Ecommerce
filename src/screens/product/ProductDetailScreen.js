@@ -44,7 +44,10 @@ const ProductDetailScreen = (props) => {
           <TouchableOpacity
             onPress={handlePressBack}
             hitSlop={{
-              top: 10, left: 10, right: 10, bottom: 10,
+              top: 10,
+              left: 10,
+              right: 10,
+              bottom: 10,
             }}
           >
             <Image
@@ -361,7 +364,6 @@ const ProductDetailScreen = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.backgroundWhite,
   },
   textSectionTitle: {
     ...TextStyles.heading5,
